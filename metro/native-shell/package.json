@@ -1,0 +1,20 @@
+{
+  "name": "zephyr-native-shell-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "cd ../.. && metro/native-shell/node_modules/.bin/turbo run start",
+    "dev:reset": "cd ../.. && metro/native-shell/node_modules/.bin/turbo run start -- --reset-cache",
+    "pods": "pnpm --filter native_shell run pods",
+    "ios": "pnpm --filter native_shell run ios",
+    "android": "pnpm --filter native_shell run android",
+    "adbreverse": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:8082 tcp:8082 && adb reverse tcp:8083 tcp:8083 && adb reverse tcp:8084 tcp:8084",
+    "typecheck": "pnpm -r run typecheck",
+    "build:ios": "pnpm --filter remote_blue --filter remote_green --filter host run build:ios",
+    "build:zephyr:ios": "pnpm --filter remote_blue --filter remote_green run build:zephyr:ios && pnpm --filter host run build:zephyr:ios",
+    "build:zephyr:android": "pnpm --filter remote_blue --filter remote_green run build:zephyr:android && pnpm --filter host run build:zephyr:android"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.0"
+  }
+}

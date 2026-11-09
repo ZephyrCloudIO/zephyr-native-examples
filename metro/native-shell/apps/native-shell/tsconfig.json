@@ -1,0 +1,15 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    // The `react-native` export condition resolves zephyr-native-cache to its TypeScript
+    // sources, which reference `window` (DOM lib). Check against its published declarations.
+    "paths": {
+      "zephyr-native-cache": [
+        "./node_modules/zephyr-native-cache/lib/typescript/index.d.ts"
+      ]
+    }
+  },
+  // index.js would pull in @module-federation/metro's bootstrap source, which relies on the
+  // `__NATIVE__` augmentation that only zephyr-native-cache's sources declare.
+  "include": ["src"]
+}

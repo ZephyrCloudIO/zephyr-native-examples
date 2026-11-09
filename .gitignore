@@ -1,0 +1,37 @@
+node_modules/
+dist/
+
+# iOS
+**/ios/Pods/
+**/ios/build/
+**/xcuserdata/
+**/.xcode.env.local
+
+# Android
+**/.gradle/
+**/android/**/build/
+**/.cxx/
+**/android/local.properties
+
+# IDE
+.idea/
+**/.idea/
+*.iml
+
+# RNEF
+.rnef/
+
+# Metro
+.metro-health-check*
+
+# Turbo
+.turbo/
+
+# Misc
+.DS_Store
+*.log
+
+# Zephyr manifests and bundles
+**/zephyr-manifest.json
+.bundle
+

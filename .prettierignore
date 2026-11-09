@@ -1,0 +1,11 @@
+node_modules/
+dist/
+**/Pods/
+**/build/
+**/.rnef/
+**/.gradle/
+**/.cxx/
+**/zephyr-manifest.json
+pnpm-lock.yaml
+**/Podfile.lock
+**/Gemfile.lock

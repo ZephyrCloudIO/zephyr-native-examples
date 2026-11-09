@@ -1,0 +1,40 @@
+{
+  "name": "native_shell",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "rnef start --client-logs",
+    "ios": "rnef run:ios",
+    "android": "rnef run:android",
+    "ios:zephyr": "ZEPHYR_BUILD=1 ZEPHYR_TARGET=ios rnef run:ios --configuration Release --destination simulator",
+    "android:zephyr": "ZEPHYR_BUILD=1 ZEPHYR_TARGET=android rnef run:android --variant Release",
+    "pods": "(cd ios && bundle install && (bundle exec pod install || bundle exec pod update))",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-native": "0.80.0",
+    "zephyr-native-cache": "0.0.0-canary.81"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@module-federation/metro": "2.9.0",
+    "@module-federation/metro-plugin-rnef": "2.9.0",
+    "@module-federation/runtime": "2.9.0",
+    "@react-native/babel-preset": "0.80.0",
+    "@react-native/codegen": "0.80.0",
+    "@react-native/gradle-plugin": "0.80.0",
+    "@react-native/metro-config": "0.80.0",
+    "@react-native/typescript-config": "0.80.0",
+    "@rnef/cli": "^0.7.25",
+    "@rnef/platform-android": "^0.7.25",
+    "@rnef/platform-ios": "^0.7.25",
+    "@rnef/plugin-metro": "^0.7.25",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.1.0",
+    "typescript": "5.0.4",
+    "zephyr-metro-plugin": "0.0.0-canary.81"
+  }
+}

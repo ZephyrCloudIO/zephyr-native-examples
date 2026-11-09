@@ -1,0 +1,36 @@
+{
+  "name": "remote_blue",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "rnef start --port 8083",
+    "typecheck": "tsc --noEmit",
+    "build:ios": "ZE_PUBLIC_DEMO=remote_blue_from_build rnef bundle-mf-remote --platform ios --dev false",
+    "build:android": "ZE_PUBLIC_DEMO=remote_blue_from_build rnef bundle-mf-remote --platform android --dev false",
+    "build:zephyr:ios": "ZE_PUBLIC_DEMO=remote_blue_from_build ZEPHYR_BUILD=1 ZEPHYR_TARGET=ios rnef bundle-mf-remote --platform ios --dev false",
+    "build:zephyr:android": "ZE_PUBLIC_DEMO=remote_blue_from_build ZEPHYR_BUILD=1 ZEPHYR_TARGET=android rnef bundle-mf-remote --platform android --dev false"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-native": "0.80.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@module-federation/metro": "2.9.0",
+    "@module-federation/metro-plugin-rnef": "2.9.0",
+    "@module-federation/runtime": "2.9.0",
+    "@react-native/babel-preset": "0.80.0",
+    "@react-native/metro-config": "0.80.0",
+    "@react-native/typescript-config": "0.80.0",
+    "@rnef/cli": "^0.7.25",
+    "@rnef/platform-android": "^0.7.25",
+    "@rnef/platform-ios": "^0.7.25",
+    "@rnef/plugin-metro": "^0.7.25",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.1.0",
+    "typescript": "5.0.4",
+    "zephyr-metro-plugin": "0.0.0-canary.81"
+  }
+}

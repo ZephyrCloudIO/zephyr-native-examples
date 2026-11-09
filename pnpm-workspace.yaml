@@ -1,0 +1,3 @@
+packages:
+  - metro/native-shell
+  - metro/native-shell/apps/*
