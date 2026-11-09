@@ -82,7 +82,10 @@ export default function App() {
               />
             </View>
             <View style={styles.cardBody}>
-              <Text style={styles.cardTitle}>Red tractor</Text>
+              <View style={styles.cardTitleRow}>
+                <Text style={styles.cardTitle}>Red tractor</Text>
+                <VersionPill color={ACCENT} />
+              </View>
               <Text style={styles.cardSubtitle}>Served by the host</Text>
               <View style={styles.envRow}>
                 <Text style={styles.envKey}>ZE_PUBLIC_DEMO</Text>
@@ -200,6 +203,7 @@ const styles = StyleSheet.create({
   },
   image: {width: 72, height: (72 * tractorRed.height) / tractorRed.width},
   cardBody: {flex: 1, marginLeft: 12},
+  cardTitleRow: {flexDirection: 'row', alignItems: 'center', gap: 8},
   cardTitle: {fontSize: 17, fontWeight: '700', color: '#0B1F33'},
   cardSubtitle: {marginTop: 1, fontSize: 13, color: '#5B6B7B'},
   envRow: {
