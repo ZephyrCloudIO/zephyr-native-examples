@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   Platform,
   Pressable,
   SafeAreaView,
@@ -44,7 +45,7 @@ export default function NativeShell() {
   const busy = refreshing || status.isPolling;
   return (
     <View style={styles.screen}>
-      <React.Suspense fallback={null}>
+      <React.Suspense fallback={<HostLoading />}>
         <Host />
       </React.Suspense>
       <SafeAreaView style={styles.bar}>
@@ -75,6 +76,17 @@ export default function NativeShell() {
           )}
         </View>
       </SafeAreaView>
+    </View>
+  );
+}
+
+// Fills the Host's space while its bundle downloads, so the shell bar stays at the bottom.
+function HostLoading() {
+  return (
+    <View testID="shell-host-loading" style={styles.loading}>
+      <ActivityIndicator size="large" color="#0B1F33" />
+      <Text style={styles.loadingTitle}>Loading the Host…</Text>
+      <Text style={styles.loadingText}>Downloading the Host bundle</Text>
     </View>
   );
 }
@@ -115,6 +127,14 @@ function ShellButton({
 
 const styles = StyleSheet.create({
   screen: {flex: 1, backgroundColor: '#F4F6F8'},
+  loading: {flex: 1, alignItems: 'center', justifyContent: 'center', gap: 6},
+  loadingTitle: {
+    marginTop: 10,
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#0B1F33',
+  },
+  loadingText: {fontSize: 14, color: '#5B6B7B'},
   bar: {backgroundColor: '#0B1F33'},
   // SafeAreaView only insets on iOS. The Android app draws edge to edge, so keep the buttons clear
   // of the gesture/navigation bar with a fixed inset (no safe-area native module in the shell).

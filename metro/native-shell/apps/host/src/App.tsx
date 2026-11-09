@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   LayoutAnimation,
   Platform,
   Pressable,
@@ -12,6 +13,7 @@ import {
   View,
 } from 'react-native';
 import {RemoteSlot} from './RemoteSlot';
+import {tractorRed} from './tractorImage';
 import {VersionPill} from './VersionPill';
 const BlueCard = React.lazy(() => import('remote_blue/BlueCard'));
 const GreenCard = React.lazy(() => import('remote_green/GreenCard'));
@@ -59,13 +61,6 @@ export default function App() {
             One store binary, three apps loaded at runtime.
           </Text>
 
-          <View style={styles.envRow}>
-            <Text style={styles.envKey}>ZE_PUBLIC_DEMO</Text>
-            <Text testID="host-demo" style={styles.envValue}>
-              {process.env.ZE_PUBLIC_DEMO ?? 'not set (local dev)'}
-            </Text>
-          </View>
-
           <View style={styles.toggleRow}>
             <Text style={styles.toggleLabel}>Show app boundaries</Text>
             <Switch
@@ -77,10 +72,39 @@ export default function App() {
             />
           </View>
 
-          <RemoteSlot name="remote_blue">
+          <View style={styles.card}>
+            <View style={styles.imageTile}>
+              <Image
+                source={tractorRed}
+                style={styles.image}
+                resizeMode="contain"
+                accessibilityLabel="Red tractor drawing"
+              />
+            </View>
+            <View style={styles.cardBody}>
+              <Text style={styles.cardTitle}>Red tractor</Text>
+              <Text style={styles.cardSubtitle}>Served by the host</Text>
+              <View style={styles.envRow}>
+                <Text style={styles.envKey}>ZE_PUBLIC_DEMO</Text>
+                <Text testID="host-demo" style={styles.envValue}>
+                  {process.env.ZE_PUBLIC_DEMO ?? 'not set (local dev)'}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <RemoteSlot
+            name="remote_blue"
+            label="Blue tractor"
+            color="#1E88E5"
+            tint="#E3F2FD">
             <BlueCard showBoundary={showBoundaries} />
           </RemoteSlot>
-          <RemoteSlot name="remote_green">
+          <RemoteSlot
+            name="remote_green"
+            label="Green tractor"
+            color="#43A047"
+            tint="#E8F5E9">
             <GreenCard showBoundary={showBoundaries} />
           </RemoteSlot>
 
@@ -151,18 +175,46 @@ const styles = StyleSheet.create({
   titleRow: {flexDirection: 'row', alignItems: 'center', gap: 10},
   title: {fontSize: 28, fontWeight: '800', color: '#0B1F33', flexShrink: 1},
   subtitle: {marginTop: 4, fontSize: 15, color: '#5B6B7B'},
-  envRow: {
+  card: {
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 16,
+    borderWidth: 2,
+    borderColor: 'transparent',
+    marginTop: 16,
+    padding: 12,
+    shadowColor: '#0B1F33',
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    shadowOffset: {width: 0, height: 4},
+    elevation: 2,
+  },
+  imageTile: {
+    width: 88,
+    height: 72,
+    borderRadius: 12,
+    backgroundColor: '#FDECEA',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {width: 72, height: (72 * tractorRed.height) / tractorRed.width},
+  cardBody: {flex: 1, marginLeft: 12},
+  cardTitle: {fontSize: 17, fontWeight: '700', color: '#0B1F33'},
+  cardSubtitle: {marginTop: 1, fontSize: 13, color: '#5B6B7B'},
+  envRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
     alignSelf: 'flex-start',
-    marginTop: 12,
+    marginTop: 8,
     backgroundColor: '#FDECEA',
     borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
   },
-  envKey: {fontSize: 12, fontWeight: '700', color: ACCENT, marginRight: 8},
-  envValue: {fontSize: 12, color: '#0B1F33'},
+  envKey: {fontSize: 11, fontWeight: '700', color: ACCENT, marginRight: 6},
+  envValue: {fontSize: 11, color: '#0B1F33'},
   toggleRow: {
     flexDirection: 'row',
     alignItems: 'center',
