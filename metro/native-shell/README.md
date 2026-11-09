@@ -91,7 +91,7 @@ The Host's **Bundle sources** panel (collapsed by default) lists each app's actu
 
 The tractor drawings are CC0 ([Green tractor.svg](https://commons.wikimedia.org/wiki/File:Green_tractor.svg); the blue one is recolored and mirrored), embedded in each remote as a PNG data URI (`src/tractorImage.ts`). @module-federation/metro 2.9.0 resolves a remote's `require`d image against the shell's dev server and doesn't emit assets from `bundle-mf-remote`, so a bundled asset would not load; inline, the image ships and updates with the remote.
 
-Each app shows a pill next to its title with the Zephyr build it was published as (`#5684`, the number in the version URL and the dashboard), or `local` when it isn't a Zephyr publish. Nothing at runtime carries that number, so `patches/zephyr-metro-plugin@0.0.0-canary.81.patch` has the publish command write `node_modules/.zephyr-metro/build-info.json` once Zephyr registers the build, before Metro bundles; `buildInfoResolver` in `scripts/lib/zephyr-build.cjs` maps the `zephyr-build-info` import to that file in Zephyr builds and to an empty module otherwise.
+The Host and each remote show a pill next to their title with the Zephyr build they were published as (`#5684`, the number in the version URL and the dashboard), or `local` when it isn't a Zephyr publish. Nothing at runtime carries that number, so `patches/zephyr-metro-plugin@0.0.0-canary.81.patch` has the publish command write `node_modules/.zephyr-metro/build-info.json` once Zephyr registers the build, before Metro bundles; `buildInfoResolver` in `scripts/lib/zephyr-build.cjs` maps the `zephyr-build-info` import to that file in Zephyr builds and to an empty module otherwise.
 
 Each app's iOS and Android build scripts set `ZE_PUBLIC_DEMO`:
 

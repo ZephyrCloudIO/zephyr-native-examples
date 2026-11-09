@@ -1,7 +1,13 @@
 import React from 'react';
-import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  Platform,
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import ZephyrNativeCache, {useCacheStatus} from 'zephyr-native-cache';
-import {VersionPill} from './VersionPill';
 const Host = React.lazy(() => import('host/App'));
 export default function NativeShell() {
   const {status} = useCacheStatus();
@@ -43,10 +49,7 @@ export default function NativeShell() {
       </React.Suspense>
       <SafeAreaView style={styles.bar}>
         <View style={styles.barContent}>
-          <View style={styles.captionRow}>
-            <Text style={styles.caption}>NATIVE SHELL</Text>
-            <VersionPill color="#8FA3B8" />
-          </View>
+          <Text style={styles.caption}>NATIVE SHELL</Text>
           <View style={styles.buttons}>
             <ShellButton
               title={refreshing ? 'Refreshing…' : 'Refresh cache'}
@@ -113,18 +116,19 @@ function ShellButton({
 const styles = StyleSheet.create({
   screen: {flex: 1, backgroundColor: '#F4F6F8'},
   bar: {backgroundColor: '#0B1F33'},
-  barContent: {paddingHorizontal: 16, paddingTop: 12, paddingBottom: 8},
-  captionRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
+  // SafeAreaView only insets on iOS. The Android app draws edge to edge, so keep the buttons clear
+  // of the gesture/navigation bar with a fixed inset (no safe-area native module in the shell).
+  barContent: {
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: Platform.OS === 'android' ? 32 : 8,
   },
   caption: {
     color: '#8FA3B8',
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.5,
+    textAlign: 'center',
   },
   buttons: {flexDirection: 'row', marginTop: 10, gap: 12},
   button: {
