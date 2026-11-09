@@ -87,7 +87,9 @@ The shell's **Refresh cache** button calls `ZephyrNativeCache.checkForUpdates()`
 
 The shell's **Reload app** button calls `ZephyrNativeCache.reloadApp()`, matching the native-cache test sample. It reloads the React Native JS context without terminating the native app. It does not clear the cache or explicitly check for updates.
 
-Each component displays its actual Module Federation entry bundle URL from the native runtime (`__FEDERATION__.__NATIVE__[appName].origin`), not a hardcoded port or deployment URL. The Host scrolls so long URLs do not hide the cards.
+The Host's **Bundle sources** panel (collapsed by default) lists each app's actual Module Federation entry bundle URL from the native runtime (`__FEDERATION__.__NATIVE__[appName].origin`), not a hardcoded port or deployment URL. **Show app boundaries** outlines the Host and each remote card in its app's color and labels it with the app name; the Host passes the setting to the remotes as a `showBoundary` prop.
+
+The tractor drawings are CC0 ([Green tractor.svg](https://commons.wikimedia.org/wiki/File:Green_tractor.svg); the blue one is recolored and mirrored), embedded in each remote as a PNG data URI (`src/tractorImage.ts`). @module-federation/metro 2.9.0 resolves a remote's `require`d image against the shell's dev server and doesn't emit assets from `bundle-mf-remote`, so a bundled asset would not load; inline, the image ships and updates with the remote.
 
 Each app's iOS and Android build scripts set `ZE_PUBLIC_DEMO`:
 

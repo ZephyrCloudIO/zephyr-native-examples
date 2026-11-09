@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, SafeAreaView, Text, View} from 'react-native';
+import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import ZephyrNativeCache, {useCacheStatus} from 'zephyr-native-cache';
 const Host = React.lazy(() => import('host/App'));
 export default function NativeShell() {
@@ -34,32 +34,35 @@ export default function NativeShell() {
     }
   }
 
+  const busy = refreshing || status.isPolling;
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={styles.screen}>
       <React.Suspense fallback={null}>
         <Host />
       </React.Suspense>
-      <SafeAreaView>
-        <View style={{paddingHorizontal: 16, paddingVertical: 8}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-            <Button
-              title={refreshing ? 'Refreshing cache…' : 'Refresh cache'}
+      <SafeAreaView style={styles.bar}>
+        <View style={styles.barContent}>
+          <Text style={styles.caption}>NATIVE SHELL</Text>
+          <View style={styles.buttons}>
+            <ShellButton
+              title={refreshing ? 'Refreshing…' : 'Refresh cache'}
               testID="shell-refresh-cache"
-              disabled={refreshing || status.isPolling}
+              disabled={busy}
               onPress={refreshCache}
             />
-            <Button
+            <ShellButton
               title="Reload app"
               testID="shell-reload-app"
-              disabled={refreshing || status.isPolling}
+              disabled={busy}
               onPress={() => ZephyrNativeCache.reloadApp()}
+              primary
             />
           </View>
           {refreshMessage !== null && (
             <Text
               testID="shell-cache-status"
               accessibilityLiveRegion="polite"
-              style={{textAlign: 'center', color: '#333'}}>
+              style={styles.status}>
               {refreshMessage}
             </Text>
           )}
@@ -68,3 +71,64 @@ export default function NativeShell() {
     </View>
   );
 }
+
+type ShellButtonProps = {
+  title: string;
+  testID: string;
+  disabled: boolean;
+  onPress: () => void;
+  primary?: boolean;
+};
+
+function ShellButton({
+  title,
+  testID,
+  disabled,
+  onPress,
+  primary = false,
+}: ShellButtonProps) {
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="button"
+      accessibilityState={{disabled}}
+      disabled={disabled}
+      onPress={onPress}
+      style={({pressed}) => [
+        styles.button,
+        primary && styles.buttonPrimary,
+        (pressed || disabled) && styles.buttonDimmed,
+      ]}>
+      <Text style={[styles.buttonText, primary && styles.buttonTextPrimary]}>
+        {title}
+      </Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  screen: {flex: 1, backgroundColor: '#F4F6F8'},
+  bar: {backgroundColor: '#0B1F33'},
+  barContent: {paddingHorizontal: 16, paddingTop: 12, paddingBottom: 8},
+  caption: {
+    color: '#8FA3B8',
+    fontSize: 11,
+    fontWeight: '700',
+    letterSpacing: 1.5,
+    textAlign: 'center',
+  },
+  buttons: {flexDirection: 'row', marginTop: 10, gap: 12},
+  button: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#2E4A66',
+  },
+  buttonPrimary: {backgroundColor: 'white', borderColor: 'white'},
+  buttonDimmed: {opacity: 0.6},
+  buttonText: {color: 'white', fontSize: 15, fontWeight: '600'},
+  buttonTextPrimary: {color: '#0B1F33'},
+  status: {marginTop: 8, textAlign: 'center', color: '#C7D3DF', fontSize: 13},
+});

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 type Props = {name: string; children: React.ReactNode};
 type State = {failed: boolean};
 class ErrorBoundary extends React.Component<Props, State> {
@@ -13,12 +13,20 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.failed)
       return (
-        <Text testID={`${this.props.name}-unavailable`}>
-          {this.props.name} unavailable
-        </Text>
+        <View style={styles.placeholder}>
+          <Text testID={`${this.props.name}-unavailable`} style={styles.text}>
+            {this.props.name} unavailable
+          </Text>
+        </View>
       );
     return (
-      <React.Suspense fallback={<Text>Loading {this.props.name}…</Text>}>
+      <React.Suspense
+        fallback={
+          <View style={styles.placeholder}>
+            <ActivityIndicator />
+            <Text style={styles.text}>Loading {this.props.name}…</Text>
+          </View>
+        }>
         {this.props.children}
       </React.Suspense>
     );
@@ -27,3 +35,15 @@ class ErrorBoundary extends React.Component<Props, State> {
 export function RemoteSlot(props: Props) {
   return <ErrorBoundary {...props} />;
 }
+
+const styles = StyleSheet.create({
+  placeholder: {
+    marginTop: 16,
+    minHeight: 120,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: 16,
+  },
+  text: {marginTop: 8, color: '#5B6B7B'},
+});
