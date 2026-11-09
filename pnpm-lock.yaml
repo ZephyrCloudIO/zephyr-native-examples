@@ -8,6 +8,9 @@ patchedDependencies:
   '@module-federation/metro@2.9.0':
     hash: 69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813
     path: patches/@module-federation__metro@2.9.0.patch
+  zephyr-metro-plugin@0.0.0-canary.81:
+    hash: b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b
+    path: patches/zephyr-metro-plugin@0.0.0-canary.81.patch
 
 importers:
 
@@ -82,7 +85,7 @@ importers:
         version: 5.0.4
       zephyr-metro-plugin:
         specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/native-shell:
     dependencies:
@@ -152,7 +155,7 @@ importers:
         version: 5.0.4
       zephyr-metro-plugin:
         specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/remote-blue:
     dependencies:
@@ -213,7 +216,7 @@ importers:
         version: 5.0.4
       zephyr-metro-plugin:
         specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/remote-green:
     dependencies:
@@ -274,7 +277,7 @@ importers:
         version: 5.0.4
       zephyr-metro-plugin:
         specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
 packages:
 
@@ -4226,7 +4229,9 @@ snapshots:
       metro-runtime: 0.82.5
     transitivePeerDependencies:
       - '@babel/core'
+      - bufferutil
       - supports-color
+      - utf-8-validate
 
   '@react-native/normalize-colors@0.80.0': {}
 
@@ -6212,7 +6217,7 @@ snapshots:
 
   zephyr-edge-contract@0.0.0-canary.81: {}
 
-  zephyr-metro-plugin@0.0.0-canary.81(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)):
+  zephyr-metro-plugin@0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)):
     dependencies:
       metro: 0.82.5
       react-native: 0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)
