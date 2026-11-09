@@ -4,6 +4,7 @@ const {withModuleFederation} = require('@module-federation/metro');
 const {
   isZephyrBuild,
   zephyrTarget,
+  buildInfoResolver,
 } = require('../../scripts/lib/zephyr-build.cjs');
 const {consumerShared} = require('../../scripts/lib/federation.cjs');
 const config = {
@@ -12,6 +13,7 @@ const config = {
       '@babel/runtime': path.resolve(__dirname, 'node_modules/@babel/runtime'),
     },
     useWatchman: false,
+    resolveRequest: buildInfoResolver(__dirname),
   },
   watchFolders: [path.resolve(__dirname, '../../../../node_modules')],
 };

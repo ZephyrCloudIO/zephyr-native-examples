@@ -1,6 +1,7 @@
 import React from 'react';
 import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import ZephyrNativeCache, {useCacheStatus} from 'zephyr-native-cache';
+import {VersionPill} from './VersionPill';
 const Host = React.lazy(() => import('host/App'));
 export default function NativeShell() {
   const {status} = useCacheStatus();
@@ -42,7 +43,10 @@ export default function NativeShell() {
       </React.Suspense>
       <SafeAreaView style={styles.bar}>
         <View style={styles.barContent}>
-          <Text style={styles.caption}>NATIVE SHELL</Text>
+          <View style={styles.captionRow}>
+            <Text style={styles.caption}>NATIVE SHELL</Text>
+            <VersionPill color="#8FA3B8" />
+          </View>
           <View style={styles.buttons}>
             <ShellButton
               title={refreshing ? 'Refreshing…' : 'Refresh cache'}
@@ -110,12 +114,17 @@ const styles = StyleSheet.create({
   screen: {flex: 1, backgroundColor: '#F4F6F8'},
   bar: {backgroundColor: '#0B1F33'},
   barContent: {paddingHorizontal: 16, paddingTop: 12, paddingBottom: 8},
+  captionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
   caption: {
     color: '#8FA3B8',
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.5,
-    textAlign: 'center',
   },
   buttons: {flexDirection: 'row', marginTop: 10, gap: 12},
   button: {

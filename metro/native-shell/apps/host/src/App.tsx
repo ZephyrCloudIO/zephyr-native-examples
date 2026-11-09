@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import {RemoteSlot} from './RemoteSlot';
+import {VersionPill} from './VersionPill';
 const BlueCard = React.lazy(() => import('remote_blue/BlueCard'));
 const GreenCard = React.lazy(() => import('remote_green/GreenCard'));
 
@@ -48,9 +49,12 @@ export default function App() {
           testID="host-frame"
           style={[styles.frame, showBoundaries && styles.boundary]}>
           {showBoundaries && <Text style={styles.boundaryTag}>host</Text>}
-          <Text style={styles.title}>
-            {process.env.ZE_PUBLIC_HOST_TITLE ?? 'Tractor Host'}
-          </Text>
+          <View style={styles.titleRow}>
+            <Text style={styles.title}>
+              {process.env.ZE_PUBLIC_HOST_TITLE ?? 'Tractor Host'}
+            </Text>
+            <VersionPill color={ACCENT} />
+          </View>
           <Text style={styles.subtitle}>
             One store binary, three apps loaded at runtime.
           </Text>
@@ -144,7 +148,8 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     overflow: 'hidden',
   },
-  title: {fontSize: 28, fontWeight: '800', color: '#0B1F33'},
+  titleRow: {flexDirection: 'row', alignItems: 'center', gap: 10},
+  title: {fontSize: 28, fontWeight: '800', color: '#0B1F33', flexShrink: 1},
   subtitle: {marginTop: 4, fontSize: 15, color: '#5B6B7B'},
   envRow: {
     flexDirection: 'row',

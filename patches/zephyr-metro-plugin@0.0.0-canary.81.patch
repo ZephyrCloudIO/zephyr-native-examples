@@ -1,0 +1,60 @@
+diff --git a/dist/lib/zephyr-metro-command-wrapper.js b/dist/lib/zephyr-metro-command-wrapper.js
+index a15eeaf0400fc1d4e32aad1b2075a0c32a9cd766..0b82e3417b806a998750dfed6700b4358fa63e95 100644
+--- a/dist/lib/zephyr-metro-command-wrapper.js
++++ b/dist/lib/zephyr-metro-command-wrapper.js
+@@ -34,6 +34,16 @@ const external_zephyr_agent_namespaceObject = require("zephyr-agent");
+ const metro_errors_js_namespaceObject = require("./internal/metro-errors.js");
+ const external_zephyr_native_internal_namespaceObject = require("zephyr-native-internal");
+ const external_zephyr_metro_plugin_js_namespaceObject = require("./zephyr-metro-plugin.js");
++// Record the build this bundle publishes as, for the app to show (`zephyr-build-info`). Written
++// after the build is registered and before Metro starts, so the bundle can import it.
++async function writeBuildInfo(context, zephyr_engine) {
++    const dir = require("node:path").join(context, 'node_modules', '.zephyr-metro');
++    require("node:fs").mkdirSync(dir, { recursive: true });
++    require("node:fs").writeFileSync(require("node:path").join(dir, 'build-info.json'), JSON.stringify({
++        applicationUid: zephyr_engine.application_uid,
++        buildId: String(await zephyr_engine.build_id)
++    }));
++}
+ function warnNativeEnvSetup() {
+     if (!global.__ZEPHYR_METRO_ENV_REWRITE__ && Object.keys((0, external_zephyr_agent_namespaceObject.collectZEPublicVars)(process.env)).length > 0) external_zephyr_agent_namespaceObject.ze_log.app('Zephyr native env: metro.config.js does not use withZephyr; ZE_PUBLIC_* reads are not rewritten and cannot receive environment overrides');
+ }
+@@ -91,6 +101,7 @@ async function zephyrCommandWrapper(bundleFederatedRemote, loadMetroConfig, upda
+                 mfConfig: global.__METRO_FEDERATION_CONFIG
+             });
+             await zephyrMetroPlugin.beforeBuild();
++            await writeBuildInfo(context, zephyrMetroPlugin.zephyr_engine);
+             wrapperOwnsRollback = true;
+             updateManifest();
+             const res = await withFederationOverrides(zephyrMetroPlugin, ()=>bundleFederatedRemote(...args));
+diff --git a/dist/lib/zephyr-metro-command-wrapper.mjs b/dist/lib/zephyr-metro-command-wrapper.mjs
+index c10389ceea40f68bcf758bae4d7e6b86908ebcdc..a3919bffaea6cf458b54876ee69df6e91f3d7d45 100644
+--- a/dist/lib/zephyr-metro-command-wrapper.mjs
++++ b/dist/lib/zephyr-metro-command-wrapper.mjs
+@@ -3,6 +3,18 @@ import { ZeErrors, ZephyrError, collectZEPublicVars, isZephyrDisabled, logZephyr
+ import { ERR_MISSING_METRO_FEDERATION_CONFIG } from "./internal/metro-errors.mjs";
+ import { assertNativeBuildTarget } from "zephyr-native-internal";
+ import { ZephyrMetroPlugin } from "./zephyr-metro-plugin.mjs";
++import { mkdirSync, writeFileSync } from "node:fs";
++import { join } from "node:path";
++// Record the build this bundle publishes as, for the app to show (`zephyr-build-info`). Written
++// after the build is registered and before Metro starts, so the bundle can import it.
++async function writeBuildInfo(context, zephyr_engine) {
++    const dir = join(context, 'node_modules', '.zephyr-metro');
++    mkdirSync(dir, { recursive: true });
++    writeFileSync(join(dir, 'build-info.json'), JSON.stringify({
++        applicationUid: zephyr_engine.application_uid,
++        buildId: String(await zephyr_engine.build_id)
++    }));
++}
+ function warnNativeEnvSetup() {
+     if (!global.__ZEPHYR_METRO_ENV_REWRITE__ && Object.keys(collectZEPublicVars(process.env)).length > 0) ze_log.app('Zephyr native env: metro.config.js does not use withZephyr; ZE_PUBLIC_* reads are not rewritten and cannot receive environment overrides');
+ }
+@@ -60,6 +72,7 @@ async function zephyrCommandWrapper(bundleFederatedRemote, loadMetroConfig, upda
+                 mfConfig: global.__METRO_FEDERATION_CONFIG
+             });
+             await zephyrMetroPlugin.beforeBuild();
++            await writeBuildInfo(context, zephyrMetroPlugin.zephyr_engine);
+             wrapperOwnsRollback = true;
+             updateManifest();
+             const res = await withFederationOverrides(zephyrMetroPlugin, ()=>bundleFederatedRemote(...args));

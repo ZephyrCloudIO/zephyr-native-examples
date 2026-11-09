@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {tractorBlue} from './tractorImage';
+import {VersionPill} from './VersionPill';
 
 const ACCENT = '#1E88E5';
 
@@ -21,7 +22,10 @@ export default function BlueCard({showBoundary = false}: Props) {
         />
       </View>
       <View style={styles.body}>
-        <Text style={styles.title}>Blue tractor</Text>
+        <View style={styles.titleRow}>
+          <Text style={styles.title}>Blue tractor</Text>
+          <VersionPill color={ACCENT} />
+        </View>
         <Text style={styles.subtitle}>Served by the blue remote</Text>
         <View style={styles.envRow}>
           <Text style={styles.envKey}>ZE_PUBLIC_DEMO</Text>
@@ -78,6 +82,7 @@ const styles = StyleSheet.create({
     height: (72 * tractorBlue.height) / tractorBlue.width,
   },
   body: {flex: 1, marginLeft: 12},
+  titleRow: {flexDirection: 'row', alignItems: 'center', gap: 8},
   title: {fontSize: 17, fontWeight: '700', color: '#0B1F33'},
   subtitle: {marginTop: 1, fontSize: 13, color: '#5B6B7B'},
   envRow: {
