@@ -1,0 +1,36 @@
+diff --git a/dist/plugin/rewrite-request.js b/dist/plugin/rewrite-request.js
+index e543fb90550a0e8772cd3ece1d10c86bb446bb67..5af86c4da5fd26d74844752bf5a1e8235e24fb5e 100644
+--- a/dist/plugin/rewrite-request.js
++++ b/dist/plugin/rewrite-request.js
+@@ -54,11 +54,11 @@ function createRewriteRequest({ config, originalEntryFilename, remoteEntryFilena
+         const { pathname } = new URL(url, 'protocol://host');
+         if (pathname.match(hostEntryPathRegex)) {
+             const target = `${relativeTmpDirPath}/${hostEntryName}`;
+-            return url.replace(hostEntryName, target);
++            return url.replace(`/${hostEntryName}`, `/${target}`);
+         }
+         if (pathname.match(remoteEntryPathRegex)) {
+             const target = `${relativeTmpDirPath}/${remoteEntryName}`;
+-            return url.replace(remoteEntryName, target);
++            return url.replace(`/${remoteEntryName}`, `/${target}`);
+         }
+         if (pathname.startsWith(`/${external_constants_js_namespaceObject.MANIFEST_FILENAME}`)) {
+             const target = (0, external_helpers_js_namespaceObject.toPosixPath)(manifestPath.replace(root, '[metro-project]'));
+diff --git a/dist/plugin/rewrite-request.mjs b/dist/plugin/rewrite-request.mjs
+index 26eec1f7cb2038b263a6aeeb789e89a1b6d3718c..dbf039ef4039cfbd15fe348b61a5ea150cd94c2e 100644
+--- a/dist/plugin/rewrite-request.mjs
++++ b/dist/plugin/rewrite-request.mjs
+@@ -13,11 +13,11 @@ function createRewriteRequest({ config, originalEntryFilename, remoteEntryFilena
+         const { pathname } = new URL(url, 'protocol://host');
+         if (pathname.match(hostEntryPathRegex)) {
+             const target = `${relativeTmpDirPath}/${hostEntryName}`;
+-            return url.replace(hostEntryName, target);
++            return url.replace(`/${hostEntryName}`, `/${target}`);
+         }
+         if (pathname.match(remoteEntryPathRegex)) {
+             const target = `${relativeTmpDirPath}/${remoteEntryName}`;
+-            return url.replace(remoteEntryName, target);
++            return url.replace(`/${remoteEntryName}`, `/${target}`);
+         }
+         if (pathname.startsWith(`/${MANIFEST_FILENAME}`)) {
+             const target = toPosixPath(manifestPath.replace(root, '[metro-project]'));

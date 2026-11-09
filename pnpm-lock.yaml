@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@module-federation/metro@2.9.0':
+    hash: 7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe
+    path: patches/@module-federation__metro@2.9.0.patch
+
 importers:
 
   .:
@@ -38,10 +43,10 @@ importers:
         version: 7.29.10
       '@module-federation/metro':
         specifier: 2.9.0
-        version: 2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        version: 2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
         specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
         specifier: 2.9.0
         version: 2.9.0
@@ -102,10 +107,10 @@ importers:
         version: 7.29.10
       '@module-federation/metro':
         specifier: 2.9.0
-        version: 2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        version: 2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
         specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
         specifier: 2.9.0
         version: 2.9.0
@@ -169,10 +174,10 @@ importers:
         version: 7.29.10
       '@module-federation/metro':
         specifier: 2.9.0
-        version: 2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        version: 2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
         specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
         specifier: 2.9.0
         version: 2.9.0
@@ -230,10 +235,10 @@ importers:
         version: 7.29.10
       '@module-federation/metro':
         specifier: 2.9.0
-        version: 2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        version: 2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
         specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
         specifier: 2.9.0
         version: 2.9.0
@@ -3964,12 +3969,12 @@ snapshots:
     dependencies:
       '@module-federation/sdk': 2.9.0
 
-  '@module-federation/metro-plugin-rnef@2.9.0(@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)':
+  '@module-federation/metro-plugin-rnef@2.9.0(@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)':
     dependencies:
-      '@module-federation/metro': 2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+      '@module-federation/metro': 2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@rnef/tools': 0.7.28
 
-  '@module-federation/metro@2.9.0(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)':
+  '@module-federation/metro@2.9.0(patch_hash=7ecf7033926af925ebb939a683f89de7bbc71ef5314a25234a1dd7692f40cafe)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)':
     dependencies:
       '@babel/types': 7.29.11
       '@expo/metro-runtime': 5.0.5(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
@@ -4221,9 +4226,7 @@ snapshots:
       metro-runtime: 0.82.5
     transitivePeerDependencies:
       - '@babel/core'
-      - bufferutil
       - supports-color
-      - utf-8-validate
 
   '@react-native/normalize-colors@0.80.0': {}
 
