@@ -5,6 +5,7 @@ const {
   isZephyrBuild,
   zephyrTarget,
 } = require('../../scripts/lib/zephyr-build.cjs');
+const {shellShared} = require('../../scripts/lib/federation.cjs');
 const config = {
   resolver: {
     extraNodeModules: {
@@ -17,20 +18,7 @@ const config = {
 const mfConfig = {
   name: 'native_shell',
   remotes: {host: 'host@http://localhost:8082/mf-manifest.json'},
-  shared: {
-    react: {
-      singleton: true,
-      eager: true,
-      requiredVersion: '19.1.0',
-      version: '19.1.0',
-    },
-    'react-native': {
-      singleton: true,
-      eager: true,
-      requiredVersion: '0.80.0',
-      version: '0.80.0',
-    },
-  },
+  shared: shellShared(),
   shareStrategy: 'loaded-first',
   runtimePlugins: [require.resolve('zephyr-native-cache/runtime-plugin')],
 };

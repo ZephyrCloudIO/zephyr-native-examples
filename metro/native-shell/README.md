@@ -30,6 +30,21 @@ No `pnpm.overrides` are required: each app pins its direct Module Federation dep
 
 Run commands from `metro/native-shell`: `pnpm dev` starts all four Metro servers; run `pnpm ios` for iOS, or `pnpm adbreverse && pnpm android` for Android. Shared formatting runs from the repository root with `pnpm format` or `pnpm format:check`.
 
+## Native modules and shared packages
+
+Only the Native Shell ships in a binary, so only it can link native code. `scripts/lib/federation.cjs` derives every app's Module Federation `shared` config from the shell's `dependencies`:
+
+- The shell provides, eagerly, `react` and each dependency with native code (an Android project or an iOS podspec) that some Host or remote depends on: today `react` and `react-native`. It doesn't share packages only it uses, such as `zephyr-native-cache`: @module-federation/metro 2.9.0 fails remote container initialization (`_targetShared.get is not a function`) when the shell eagerly shares a package no consumer declares.
+- The Host and remotes take the provided packages they depend on from the shell (`import: false`), at the shell's version.
+- A Host or remote that depends on a native package the shell doesn't provide, or on a different version of one, fails at Metro config load with the list of offending packages. Add the package to `apps/native-shell/package.json` at the same version and rebuild the shell.
+
+This is a build-time check. A bundle published against one shell can still reach an older installed binary, so publish to an environment that only shells with the same native dependencies follow. If a remote's dependency imports a package's internals by deep path (for example `react-native/Libraries/...`), add that path to `DEEP_IMPORTS` in `federation.cjs`.
+
+`patches/@module-federation__metro@2.9.0.patch` (root `pnpm.patchedDependencies`) fixes two upstream bugs:
+
+- Entry URL rewriting replaced the first occurrence of the entry name anywhere in the URL, so the HMR client's `http://localhost:8082/host.bundle` for the remote named `host` became `http://localnode_modules/...` and crashed the Host's Metro. It now rewrites the `/<entry>` path segment only.
+- A shared module required synchronously before its async load finished got an empty `{}` placeholder for good. It now resolves from the share scope synchronously. This only triggers once a shared package other than `react`/`react-native` is required during startup.
+
 ## Zephyr builds and the demo environment
 
 Set `ZEPHYR_BUILD=1` to enable Zephyr mode; `ZEPHYR_TARGET` selects `ios` or `android` (defaults to iOS). Zephyr builds upload their bundles and require Zephyr login and a git repository with at least one commit (branch and commit come from git).

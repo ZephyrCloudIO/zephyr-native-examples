@@ -5,6 +5,7 @@ const {
   isZephyrBuild,
   zephyrTarget,
 } = require('../../scripts/lib/zephyr-build.cjs');
+const {consumerShared} = require('../../scripts/lib/federation.cjs');
 const config = {
   resolver: {
     extraNodeModules: {
@@ -18,22 +19,7 @@ const mfConfig = {
   name: 'remote_blue',
   filename: 'remote_blue.bundle',
   exposes: {'./BlueCard': './src/BlueCard.tsx'},
-  shared: {
-    react: {
-      singleton: true,
-      eager: false,
-      requiredVersion: '19.1.0',
-      version: '19.1.0',
-      import: false,
-    },
-    'react-native': {
-      singleton: true,
-      eager: false,
-      requiredVersion: '0.80.0',
-      version: '0.80.0',
-      import: false,
-    },
-  },
+  shared: consumerShared(__dirname),
   shareStrategy: 'version-first',
 };
 const mfFlags = {

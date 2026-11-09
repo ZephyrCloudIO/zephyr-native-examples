@@ -5,6 +5,7 @@ const {
   isZephyrBuild,
   zephyrTarget,
 } = require('../../scripts/lib/zephyr-build.cjs');
+const {consumerShared} = require('../../scripts/lib/federation.cjs');
 const config = {
   resolver: {
     extraNodeModules: {
@@ -22,22 +23,7 @@ const mfConfig = {
     remote_blue: 'remote_blue@http://localhost:8083/mf-manifest.json',
     remote_green: 'remote_green@http://localhost:8084/mf-manifest.json',
   },
-  shared: {
-    react: {
-      singleton: true,
-      eager: false,
-      requiredVersion: '19.1.0',
-      version: '19.1.0',
-      import: false,
-    },
-    'react-native': {
-      singleton: true,
-      eager: false,
-      requiredVersion: '0.80.0',
-      version: '0.80.0',
-      import: false,
-    },
-  },
+  shared: consumerShared(__dirname),
   shareStrategy: 'version-first',
 };
 const mfFlags = {
