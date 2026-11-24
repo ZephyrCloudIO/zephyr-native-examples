@@ -35,3 +35,6 @@ dist/
 **/zephyr-manifest.json
 .bundle
 
+# Local git worktrees
+.worktrees/
+
