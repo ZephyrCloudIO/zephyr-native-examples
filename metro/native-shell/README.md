@@ -40,10 +40,11 @@ Only the Native Shell ships in a binary, so only it can link native code. `scrip
 
 This is a build-time check. A bundle published against one shell can still reach an older installed binary, so publish to an environment that only shells with the same native dependencies follow. If a remote's dependency imports a package's internals by deep path (for example `react-native/Libraries/...`), add that path to `DEEP_IMPORTS` in `federation.cjs`.
 
-`patches/@module-federation__metro@2.9.0.patch` (root `pnpm.patchedDependencies`) fixes two upstream bugs:
+`patches/@module-federation__metro@2.9.0.patch` (root `pnpm.patchedDependencies`) fixes one upstream bug on this branch:
 
-- Entry URL rewriting replaced the first occurrence of the entry name anywhere in the URL, so the HMR client's `http://localhost:8082/host.bundle` for the remote named `host` became `http://localnode_modules/...` and crashed the Host's Metro. It now rewrites the `/<entry>` path segment only.
 - A shared module required synchronously before its async load finished got an empty `{}` placeholder for good. It now resolves from the share scope synchronously. This only triggers once a shared package other than `react`/`react-native` is required during startup.
+
+The entry URL rewrite fix that `main` carries is left out to reproduce [module-federation/core#5288](https://github.com/module-federation/core/issues/5288): the rewrite replaces the first occurrence of the entry name anywhere in the URL, so the HMR client's `http://localhost:8082/host.bundle` for the remote named `host` becomes `http://localnode_modules/...` and crashes the Host's Metro.
 
 ## Zephyr builds and the demo environment
 
