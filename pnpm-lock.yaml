@@ -5,12 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  '@module-federation/metro@2.9.0':
-    hash: 69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813
-    path: patches/@module-federation__metro@2.9.0.patch
-  zephyr-metro-plugin@0.0.0-canary.81:
+  zephyr-metro-plugin@0.0.0-canary.85:
     hash: b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b
-    path: patches/zephyr-metro-plugin@0.0.0-canary.81.patch
+    path: patches/zephyr-metro-plugin@0.0.0-canary.85.patch
 
 importers:
 
@@ -45,14 +42,14 @@ importers:
         specifier: ^7.25.0
         version: 7.29.10
       '@module-federation/metro':
-        specifier: 2.9.0
-        version: 2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
-        specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
-        specifier: 2.9.0
-        version: 2.9.0
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308
       '@react-native/babel-preset':
         specifier: 0.80.0
         version: 0.80.0(@babel/core@7.29.7)
@@ -84,8 +81,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       zephyr-metro-plugin:
-        specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        specifier: 0.0.0-canary.85
+        version: 0.0.0-canary.85(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/native-shell:
     dependencies:
@@ -96,8 +93,8 @@ importers:
         specifier: 0.80.0
         version: 0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)
       zephyr-native-cache:
-        specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)
+        specifier: 0.0.0-canary.85
+        version: 0.0.0-canary.85(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.25.2
@@ -109,14 +106,14 @@ importers:
         specifier: ^7.25.0
         version: 7.29.10
       '@module-federation/metro':
-        specifier: 2.9.0
-        version: 2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
-        specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
-        specifier: 2.9.0
-        version: 2.9.0
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308
       '@react-native/babel-preset':
         specifier: 0.80.0
         version: 0.80.0(@babel/core@7.29.7)
@@ -154,8 +151,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       zephyr-metro-plugin:
-        specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        specifier: 0.0.0-canary.85
+        version: 0.0.0-canary.85(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/remote-blue:
     dependencies:
@@ -176,14 +173,14 @@ importers:
         specifier: ^7.25.0
         version: 7.29.10
       '@module-federation/metro':
-        specifier: 2.9.0
-        version: 2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
-        specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
-        specifier: 2.9.0
-        version: 2.9.0
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308
       '@react-native/babel-preset':
         specifier: 0.80.0
         version: 0.80.0(@babel/core@7.29.7)
@@ -215,8 +212,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       zephyr-metro-plugin:
-        specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        specifier: 0.0.0-canary.85
+        version: 0.0.0-canary.85(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
   metro/native-shell/apps/remote-green:
     dependencies:
@@ -237,14 +234,14 @@ importers:
         specifier: ^7.25.0
         version: 7.29.10
       '@module-federation/metro':
-        specifier: 2.9.0
-        version: 2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@module-federation/metro-plugin-rnef':
-        specifier: 2.9.0
-        version: 2.9.0(@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308(@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)
       '@module-federation/runtime':
-        specifier: 2.9.0
-        version: 2.9.0
+        specifier: 0.0.0-main-20261127112308
+        version: 0.0.0-main-20261127112308
       '@react-native/babel-preset':
         specifier: 0.80.0
         version: 0.80.0(@babel/core@7.29.7)
@@ -276,8 +273,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       zephyr-metro-plugin:
-        specifier: 0.0.0-canary.81
-        version: 0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
+        specifier: 0.0.0-canary.85
+        version: 0.0.0-canary.85(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
 
 packages:
 
@@ -1028,8 +1025,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@module-federation/dts-plugin@2.9.0':
-    resolution: {integrity: sha512-uMGqEG/p9odG2BVr7WRbBe2OgrvzBd3LPzcp5WP+bm3djBdUJ4PZ3ozqKp6qpy+NFnlh6vnM815Xn6AXkKy1Vw==}
+  '@module-federation/dts-plugin@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-nUGP1BzONxp2y0/DcwQkhwPOCanrlM787QvsStf31q2VXr6tcrkw7qjxtCDqjLVKZC4b3g6qJUuCHnurooLXqQ==}
     peerDependencies:
       typescript: ^4.9.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
       vue-tsc: '>=1.0.24'
@@ -1037,20 +1034,20 @@ packages:
       vue-tsc:
         optional: true
 
-  '@module-federation/error-codes@2.9.0':
-    resolution: {integrity: sha512-IGpd+VRlji3NyGOGGTsk7YEmPRKcDoBK4YHqIuP+OQwyb2YhHCUHO2vW9RXeQxCuKwi+c6xkTweRYG+Umy+0Zw==}
+  '@module-federation/error-codes@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-0tL0klEx/jqIOUtgTyT5V5akiSHJTNoj2RD9N+6fANcA0v6b92Cg3iT19FLnvrCWhMpp364gvMseY4+a7t0Lpw==}
 
-  '@module-federation/managers@2.9.0':
-    resolution: {integrity: sha512-8KhB2PF4g+M0hGaethU1H4GVWabLn5sF5TvnM6VxgAcDL4TfLY8aC/YobAXHG/SV0jpU5lsGe6s6xy6ccV0MQw==}
+  '@module-federation/managers@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-lKNzokLnkdb/EamFWBj0QRrlXUYRkXYWBFYCIYLNabZ7oOKhhh4ZNi7vS7qaJGMLFuxka4eW//xvM0Tlmbm1aQ==}
 
-  '@module-federation/metro-plugin-rnef@2.9.0':
-    resolution: {integrity: sha512-b+5YE/G/vpmxXeo5Q3UDzwpUB7ZOFb7nEcddennvhtkaNm67ZrIoH3kGusylzG3nZsQz2inZroIhzxnblOeQAw==}
+  '@module-federation/metro-plugin-rnef@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-hy7iHXO39upL4reB79q79yrXDZfEr+nRZkyCGtDGNzM9I3mCzEjB0xIEQgcz3CFTu0Nciik8el2n9KTA0yfpfg==}
     peerDependencies:
-      '@module-federation/metro': 2.9.0
+      '@module-federation/metro': 0.0.0-main-20261127112308
       '@rnef/tools': ^0.7.18
 
-  '@module-federation/metro@2.9.0':
-    resolution: {integrity: sha512-IkTbg5eNaEfl+pTFxu9d0JUySmPRGByMQCVmZ2ivI/J/ivHYGYM2KwNQR1iI2pJr6zPHSLFA45fozRnFjvk9ww==}
+  '@module-federation/metro@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-0ElIPIMvXqlpIhzFBo5uIVMLNBMVxav6Y8uVnPv1Vm3HjFWJeD9tTjBRuY8whS+ggHw7/MkIMASMQ6oTApcv3g==}
     peerDependencies:
       '@babel/types': ^7.25.0
       metro: ^0.82.1
@@ -1066,17 +1063,17 @@ packages:
       react-native:
         optional: true
 
-  '@module-federation/runtime-core@2.9.0':
-    resolution: {integrity: sha512-dLykRYfpbEJBTdk2NlbNoVVTB196O3qujawTBguLABJkPCWETJNk60NR1yZO34eI+DTH+eGwHU3m7FddAWnbnw==}
+  '@module-federation/runtime-core@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-sJiN04ZNnWb+SO3OJUM5lHieg1zjvFy+QqZkoAXi6bhGJm8ZZKPvlCxAJlDxA0cl/kiMGBUHeoyF0hKLCnZyVQ==}
 
-  '@module-federation/runtime@2.9.0':
-    resolution: {integrity: sha512-3cyAav0hWP+dNvB7qrcK9CKxQn+JvkbRvLtZz3zS2g0EyxtDFDjgbHY0Afcf7oHf8IHhKeEdzb/3Kjr1Pjmr7A==}
+  '@module-federation/runtime@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-CZTTyXMIL8KxkxF4oYVGL7mRNBYCeLUT5aYBey/1kApi0Pxb5444yOAys1q3uP4t5zDPuADQYkPqBagu+yAiJg==}
 
-  '@module-federation/sdk@2.9.0':
-    resolution: {integrity: sha512-IMjObgBGQTXd33jTTCYcxvz8iOQGLsZ2QIPOj90rDxuBtJsN4WJwYyXqligrhY/e5p/BipUPdbIgKmWL7zFhTw==}
+  '@module-federation/sdk@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-XXA1YO8itP7QbfwqY+Fo2arI1FFVuWpE1Sh9huQYBlocOenzhEnwW++4YA/6qveGWluCUtruE8TS1LsBZ8dvHA==}
 
-  '@module-federation/third-party-dts-extractor@2.9.0':
-    resolution: {integrity: sha512-R1Xuqnqzw6wQxWV3yU9fX1FydXAeZF2TNVFAVo1N1oLBA2j5y7aUO/Fc3VSNgd9/gxMzJgTVBdA+nMiD2SFCgg==}
+  '@module-federation/third-party-dts-extractor@0.0.0-main-20261127112308':
+    resolution: {integrity: sha512-qS/YaO+B0nZmBhfEfDoMvbuR0nNITSTo/h12wpOnapo3KTtRoLlKfxGtStEaK6UylzRkceBOM2vpQjGMtLZz3A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1334,8 +1331,8 @@ packages:
     resolution: {integrity: sha512-ufJnssQGbxzLNS1Ho9bCtX4rQKCCvoVuDLHoJyc3F9dOGDB4BkWs2Ci0kv53lqocAEQ/Cbi+I2XCsNYGqVYqng==}
     engines: {node: '>=12.0'}
 
-  adm-zip@0.6.0:
-    resolution: {integrity: sha512-XleryMhbuksdKtofnWZ9Sk+4CUTbms4Mb/EU32SZwToAyZ5RgVos/ki8n+yr0LWHOGKuakbXTuuYNHLQjhddgg==}
+  adm-zip@0.6.1:
+    resolution: {integrity: sha512-Xwrja8nx9e5o2N1my4DsKCeKpdrnACyr1wtbPxBDgGzKzKyE9kRtBFA8mWldI+RVlD7CBZNWY/wQ2+ydwOR6kQ==}
     engines: {node: '>=14.0'}
 
   agent-base@6.0.2:
@@ -2823,8 +2820,8 @@ packages:
   undici-types@8.9.0:
     resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
-  undici@7.29.0:
-    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
+  undici@7.30.1:
+    resolution: {integrity: sha512-03KrMbjIFDWQR5RNPrSw3bd1r12JpyFQl9/yxjUbJtqkjmllqC5lFjZh6ujeuJCKr8EOQvRW872Oy/az+nLYxg==}
     engines: {node: '>=20.18.1'}
 
   unicode-canonical-property-names-ecmascript@2.0.1:
@@ -2915,8 +2912,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.21.0:
-    resolution: {integrity: sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==}
+  ws@8.21.3:
+    resolution: {integrity: sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -2959,26 +2956,26 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zephyr-agent@0.0.0-canary.81:
-    resolution: {integrity: sha512-B4tYgO4Z/vY2kFOnZRK/mUnh7MYyIKYV1EoK+aiNvZhK9bmQV+wwnLji1MXEYy25ncwt/vRmxWIS+JK0udVpow==}
+  zephyr-agent@0.0.0-canary.85:
+    resolution: {integrity: sha512-VfuQ2noQhVr904gwD6r/95TCiZHGC1No4JowsGMtiLPC4gJ/UjNkpa/xKU09fmu0kaUn7161fsMe/akzFCJV/A==}
 
-  zephyr-edge-contract@0.0.0-canary.81:
-    resolution: {integrity: sha512-x3m4GcLxqtxL356TtX9tCIu8tiUlLFfepWOJYrFYyRxzYQpaSCrIyMbGiSFxedldomiWj77u6GAzjmn6qu9jPw==}
+  zephyr-edge-contract@0.0.0-canary.85:
+    resolution: {integrity: sha512-qDmsIWHsA2cZE5wsyYSVi15+hephWwoR8QNq+QSJ4c8ZbxaTLoH+iQRF5Ra+G1x73fbpiXHP+f42lFfBq044FA==}
 
-  zephyr-metro-plugin@0.0.0-canary.81:
-    resolution: {integrity: sha512-2G3fcoWDQad9dWRnq/kBo1OG6HqKRSSgvC3v/4U+6uS5zFIBpcIHUUfZP0j/Bkt1n1XfwNmBAmrr64JRJQXbNg==}
+  zephyr-metro-plugin@0.0.0-canary.85:
+    resolution: {integrity: sha512-Qbw4HitWnxKnJy1DGBJTi366s0WP2jerlDaKy2nNlbfs27AF33V3LCXIBLiQOVldpuT9cvzGPoiIAo1Q6Xdw5Q==}
     peerDependencies:
       metro: '>=0.70.0'
       react-native: '>=0.60.0'
 
-  zephyr-native-cache@0.0.0-canary.81:
-    resolution: {integrity: sha512-bEqrqgc91uQHNWoDiZGFR9pwilHhp8ZYctHDCXHz/oXM+kDLYYXKYKHLlAidSv6iLZRIjfBtvv7RSmvt1r0QUQ==}
+  zephyr-native-cache@0.0.0-canary.85:
+    resolution: {integrity: sha512-MHIv0pzdlrRw2ylLCqf5FcLwTX/31xnViNEQy2hHHfj7x+mQEVSvg+8o9zRNfE8rJB4vt3/cJDYBnrO9x3c0lA==}
     peerDependencies:
       react: '>=19.0.0'
       react-native: '>=0.79.0'
 
-  zephyr-native-internal@0.0.0-canary.81:
-    resolution: {integrity: sha512-/VvVIi2UQTx/uKU13p4Iso9a4tbAiu1DSd5uOFohCs1HR6UE+MkObngvFZ/GEN4h488JntKu4JmJvQPlAxxl0w==}
+  zephyr-native-internal@0.0.0-canary.85:
+    resolution: {integrity: sha512-RPYqyJjhA+Gnrgpxhcv18gY0qdzp9RJPvn0CxKWYSqKUFeKYfRrEttR4/i7hbIfJ/03CORRgVvP5IcDiZoGNsg==}
 
 snapshots:
 
@@ -3951,39 +3948,39 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@module-federation/dts-plugin@2.9.0(typescript@5.0.4)':
+  '@module-federation/dts-plugin@0.0.0-main-20261127112308(typescript@5.0.4)':
     dependencies:
-      '@module-federation/error-codes': 2.9.0
-      '@module-federation/managers': 2.9.0
-      '@module-federation/sdk': 2.9.0
-      '@module-federation/third-party-dts-extractor': 2.9.0
-      adm-zip: 0.6.0
-      isomorphic-ws: 5.0.0(ws@8.21.0)
+      '@module-federation/error-codes': 0.0.0-main-20261127112308
+      '@module-federation/managers': 0.0.0-main-20261127112308
+      '@module-federation/sdk': 0.0.0-main-20261127112308
+      '@module-federation/third-party-dts-extractor': 0.0.0-main-20261127112308
+      adm-zip: 0.6.1
+      isomorphic-ws: 5.0.0(ws@8.21.3)
       typescript: 5.0.4
-      undici: 7.29.0
-      ws: 8.21.0
+      undici: 7.30.1
+      ws: 8.21.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@module-federation/error-codes@2.9.0': {}
+  '@module-federation/error-codes@0.0.0-main-20261127112308': {}
 
-  '@module-federation/managers@2.9.0':
+  '@module-federation/managers@0.0.0-main-20261127112308':
     dependencies:
-      '@module-federation/sdk': 2.9.0
+      '@module-federation/sdk': 0.0.0-main-20261127112308
 
-  '@module-federation/metro-plugin-rnef@2.9.0(@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)':
+  '@module-federation/metro-plugin-rnef@0.0.0-main-20261127112308(@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4))(@rnef/tools@0.7.28)':
     dependencies:
-      '@module-federation/metro': 2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
+      '@module-federation/metro': 0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)
       '@rnef/tools': 0.7.28
 
-  '@module-federation/metro@2.9.0(patch_hash=69517f30f5ff4324163cbe152e2ce2101431983cff60d8018927904811e86813)(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)':
+  '@module-federation/metro@0.0.0-main-20261127112308(@babel/types@7.29.11)(metro-config@0.82.5)(metro-file-map@0.82.5)(metro-resolver@0.82.5)(metro-source-map@0.82.5)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0)(typescript@5.0.4)':
     dependencies:
       '@babel/types': 7.29.11
       '@expo/metro-runtime': 5.0.5(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))
-      '@module-federation/dts-plugin': 2.9.0(typescript@5.0.4)
-      '@module-federation/runtime': 2.9.0
-      '@module-federation/sdk': 2.9.0
+      '@module-federation/dts-plugin': 0.0.0-main-20261127112308(typescript@5.0.4)
+      '@module-federation/runtime': 0.0.0-main-20261127112308
+      '@module-federation/sdk': 0.0.0-main-20261127112308
       metro: 0.82.5
       metro-config: 0.82.5
       metro-file-map: 0.82.5
@@ -3998,20 +3995,20 @@ snapshots:
       - utf-8-validate
       - vue-tsc
 
-  '@module-federation/runtime-core@2.9.0':
+  '@module-federation/runtime-core@0.0.0-main-20261127112308':
     dependencies:
-      '@module-federation/error-codes': 2.9.0
-      '@module-federation/sdk': 2.9.0
+      '@module-federation/error-codes': 0.0.0-main-20261127112308
+      '@module-federation/sdk': 0.0.0-main-20261127112308
 
-  '@module-federation/runtime@2.9.0':
+  '@module-federation/runtime@0.0.0-main-20261127112308':
     dependencies:
-      '@module-federation/error-codes': 2.9.0
-      '@module-federation/runtime-core': 2.9.0
-      '@module-federation/sdk': 2.9.0
+      '@module-federation/error-codes': 0.0.0-main-20261127112308
+      '@module-federation/runtime-core': 0.0.0-main-20261127112308
+      '@module-federation/sdk': 0.0.0-main-20261127112308
 
-  '@module-federation/sdk@2.9.0': {}
+  '@module-federation/sdk@0.0.0-main-20261127112308': {}
 
-  '@module-federation/third-party-dts-extractor@2.9.0': {}
+  '@module-federation/third-party-dts-extractor@0.0.0-main-20261127112308': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -4461,7 +4458,7 @@ snapshots:
 
   adm-zip@0.5.18: {}
 
-  adm-zip@0.6.0: {}
+  adm-zip@0.6.1: {}
 
   agent-base@6.0.2:
     dependencies:
@@ -5204,9 +5201,9 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  isomorphic-ws@5.0.0(ws@8.21.0):
+  isomorphic-ws@5.0.0(ws@8.21.3):
     dependencies:
-      ws: 8.21.0
+      ws: 8.21.3
 
   istanbul-lib-coverage@3.2.2: {}
 
@@ -6107,7 +6104,7 @@ snapshots:
 
   undici-types@8.9.0: {}
 
-  undici@7.29.0: {}
+  undici@7.30.1: {}
 
   unicode-canonical-property-names-ecmascript@2.0.1: {}
 
@@ -6169,7 +6166,7 @@ snapshots:
 
   ws@7.5.13: {}
 
-  ws@8.21.0: {}
+  ws@8.21.3: {}
 
   wsl-utils@1.0.1:
     dependencies:
@@ -6198,7 +6195,7 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zephyr-agent@0.0.0-canary.81:
+  zephyr-agent@0.0.0-canary.85:
     dependencies:
       '@bybrave/proper-lockfile2': 5.0.0
       '@toon-format/toon': 4.4.0
@@ -6210,38 +6207,38 @@ snapshots:
       jiti: 2.7.0
       jose: 6.2.13
       open: 11.0.4
-      zephyr-edge-contract: 0.0.0-canary.81
+      zephyr-edge-contract: 0.0.0-canary.85
     transitivePeerDependencies:
       - kerberos
       - supports-color
 
-  zephyr-edge-contract@0.0.0-canary.81: {}
+  zephyr-edge-contract@0.0.0-canary.85: {}
 
-  zephyr-metro-plugin@0.0.0-canary.81(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)):
+  zephyr-metro-plugin@0.0.0-canary.85(patch_hash=b2e82c23f08b7f33b70deadc062f1fe8abb446d6f50fa10f07ac72e96911cd8b)(metro@0.82.5)(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)):
     dependencies:
       metro: 0.82.5
       react-native: 0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)
       yaml: 2.9.1
-      zephyr-agent: 0.0.0-canary.81
-      zephyr-edge-contract: 0.0.0-canary.81
-      zephyr-native-internal: 0.0.0-canary.81
+      zephyr-agent: 0.0.0-canary.85
+      zephyr-edge-contract: 0.0.0-canary.85
+      zephyr-native-internal: 0.0.0-canary.85
     transitivePeerDependencies:
       - kerberos
       - supports-color
 
-  zephyr-native-cache@0.0.0-canary.81(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0):
+  zephyr-native-cache@0.0.0-canary.85(react-native@0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-native: 0.80.0(@babel/core@7.29.7)(@types/react@19.3.0)(react@19.1.0)
-      zephyr-edge-contract: 0.0.0-canary.81
+      zephyr-edge-contract: 0.0.0-canary.85
 
-  zephyr-native-internal@0.0.0-canary.81:
+  zephyr-native-internal@0.0.0-canary.85:
     dependencies:
       '@babel/parser': 7.29.11
       hermes-parser: 0.36.1
       magic-string: 1.2.3
-      zephyr-agent: 0.0.0-canary.81
-      zephyr-edge-contract: 0.0.0-canary.81
+      zephyr-agent: 0.0.0-canary.85
+      zephyr-edge-contract: 0.0.0-canary.85
     transitivePeerDependencies:
       - kerberos
       - supports-color
