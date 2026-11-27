@@ -18,9 +18,9 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
-    "@module-federation/metro": "2.9.0",
-    "@module-federation/metro-plugin-rnef": "2.9.0",
-    "@module-federation/runtime": "2.9.0",
+    "@module-federation/metro": "0.0.0-main-20261127112308",
+    "@module-federation/metro-plugin-rnef": "0.0.0-main-20261127112308",
+    "@module-federation/runtime": "0.0.0-main-20261127112308",
     "@react-native/babel-preset": "0.80.0",
     "@react-native/metro-config": "0.80.0",
     "@react-native/typescript-config": "0.80.0",
@@ -31,6 +31,6 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.1.0",
     "typescript": "5.0.4",
-    "zephyr-metro-plugin": "0.0.0-canary.81"
+    "zephyr-metro-plugin": "0.0.0-canary.85"
   }
 }

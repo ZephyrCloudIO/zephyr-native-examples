@@ -19,9 +19,9 @@ A React Native proof of the Native Shell + Host architecture. This is a pnpm/Tur
 
 ## Setup
 
-The workspace uses published `0.0.0-canary.81` versions of `zephyr-metro-plugin`, `zephyr-agent`, `zephyr-edge-contract`, `zephyr-native-internal`, and `zephyr-native-cache`. Local tarballs and a sibling `zephyr-packages` checkout are no longer required.
+The workspace uses published `0.0.0-canary.85` versions of `zephyr-metro-plugin`, `zephyr-agent`, `zephyr-edge-contract`, `zephyr-native-internal`, and `zephyr-native-cache`. Local tarballs and a sibling `zephyr-packages` checkout are no longer required.
 
-No `pnpm.overrides` are required: each app pins its direct Module Federation dependencies to `2.9.0` and Zephyr packages to `0.0.0-canary.81`; the canary packages declare matching exact versions for their Zephyr transitive dependencies. pnpm overrides are root-only, so placing them in this project manifest would not apply.
+No `pnpm.overrides` are required: each app pins its direct Module Federation dependencies to the `0.0.0-main-20261127112308` canary and Zephyr packages to `0.0.0-canary.85`; the canary packages declare matching exact versions for their transitive dependencies. pnpm overrides are root-only, so placing them in this project manifest would not apply.
 
 - `pnpm install` from the repository root
 - `pnpm pods` from `metro/native-shell` (macOS with CocoaPods/Bundler)
@@ -39,11 +39,6 @@ Only the Native Shell ships in a binary, so only it can link native code. `scrip
 - A Host or remote that depends on a native package the shell doesn't provide, or on a different version of one, fails at Metro config load with the list of offending packages. Add the package to `apps/native-shell/package.json` at the same version and rebuild the shell.
 
 This is a build-time check. A bundle published against one shell can still reach an older installed binary, so publish to an environment that only shells with the same native dependencies follow. If a remote's dependency imports a package's internals by deep path (for example `react-native/Libraries/...`), add that path to `DEEP_IMPORTS` in `federation.cjs`.
-
-`patches/@module-federation__metro@2.9.0.patch` (root `pnpm.patchedDependencies`) fixes two upstream bugs:
-
-- Entry URL rewriting replaced the first occurrence of the entry name anywhere in the URL, so the HMR client's `http://localhost:8082/host.bundle` for the remote named `host` became `http://localnode_modules/...` and crashed the Host's Metro. It now rewrites the `/<entry>` path segment only.
-- A shared module required synchronously before its async load finished got an empty `{}` placeholder for good. It now resolves from the share scope synchronously. This only triggers once a shared package other than `react`/`react-native` is required during startup.
 
 ## Zephyr builds and the demo environment
 
@@ -93,7 +88,7 @@ The tractor drawings are CC0 ([Green tractor.svg](https://commons.wikimedia.org/
 
 While the Host bundle downloads, the shell shows a loading screen above its bar. While a remote downloads, the Host shows a placeholder card in the remote's color with the same footprint as the remote's card, and the same card with "unavailable" if the remote fails to load.
 
-The Host and each remote show a pill next to their title with the Zephyr build they were published as (`#5684`, the number in the version URL and the dashboard), or `local` when it isn't a Zephyr publish. Nothing at runtime carries that number, so `patches/zephyr-metro-plugin@0.0.0-canary.81.patch` has the publish command write `node_modules/.zephyr-metro/build-info.json` once Zephyr registers the build, before Metro bundles; `buildInfoResolver` in `scripts/lib/zephyr-build.cjs` maps the `zephyr-build-info` import to that file in Zephyr builds and to an empty module otherwise.
+The Host and each remote show a pill next to their title with the Zephyr build they were published as (`#5684`, the number in the version URL and the dashboard), or `local` when it isn't a Zephyr publish. zephyr-metro-plugin doesn't expose that number to the bundle, so `patches/zephyr-metro-plugin@0.0.0-canary.85.patch` has the publish command write `node_modules/.zephyr-metro/build-info.json` once Zephyr registers the build, before Metro bundles; `buildInfoResolver` in `scripts/lib/zephyr-build.cjs` maps the `zephyr-build-info` import to that file in Zephyr builds and to an empty module otherwise.
 
 Each app's iOS and Android build scripts set `ZE_PUBLIC_DEMO`:
 
